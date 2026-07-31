@@ -1,0 +1,2 @@
+-- Write your query below
+select e.student_id, MIN(e.exam_id) as exam_id,  score  from exam_results e  where  score = ( select Max(e2.score) from exam_results e2 where e.student_id = e2.student_id ) group by e.student_id,e.score order by e.student_id
